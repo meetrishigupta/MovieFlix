@@ -8,11 +8,40 @@ class MovieCard extends React.Component {
       plot: "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
       price: 150,
       rating: 8.5,
+      count: 0,
+      cart: false,
       stars: 0,
+      fav: false,
       img: "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
     };
-  }
+    // }
+    // handleCLick = () => {
+    //   this.setState({
+    //     count: this.state.count + 2,
+    //   });
+    //   this.setState({
+    //     count: this.state.count + 2,
+    //   });
+    //   this.setState({
+    //     count: this.state.count + 2,
+    //   });
+    //   this.setState({
+    //     count: this.state.count + 3,
+    //   });
 
+    // this.setState((prevstate) => {
+    //   return {
+    //     count: prevstate.count + 1,
+    //   };
+    // });
+
+    // this.setState((prevstate) => {
+    //   return {
+    //     count: prevstate.count + 1,
+    //   };
+    // });
+    // console.log(this.state.stars);
+  }
   handleStarsinc = () => {
     // //First Form of setState()
     // this.setState({
@@ -34,8 +63,19 @@ class MovieCard extends React.Component {
       });
     }
   };
+  handlefav = () => {
+    this.setState({
+      fav: !this.state.fav,
+    });
+  };
+  handleCart = () => {
+    this.setState({
+      cart: !this.state.cart,
+    });
+  };
   render() {
-    const { title, plot, stars, price, rating, img } = this.state;
+    const { cart, fav, count, title, plot, stars, price, rating, img } =
+      this.state;
 
     return (
       <div className="main">
@@ -61,6 +101,7 @@ class MovieCard extends React.Component {
               {/**Star image with increase and decrease buttons and star count */}
               <div className="star-dis">
                 <img
+                id="dec-button"
                   className="str-btn"
                   onClick={this.handleStarsdec}
                   alt="Decrease"
@@ -81,8 +122,22 @@ class MovieCard extends React.Component {
               </div>
 
               {/**Favourite and add to cart buttons */}
-              <button className="favourite-btn">Favourite</button>
-              <button className="cart-btn">Add to Cart</button>
+              {fav ? (
+                <button className="unfavourite-btn" onClick={this.handlefav}>
+                  Un Favourite
+                </button>
+              ) : (
+                <button className="favourite-btn" onClick={this.handlefav}>
+                  Favourite
+                </button>
+              )}
+
+              <button
+                onClick={this.handleCart}
+                className={cart ? "remcart-btn" : "cart-btn"}
+              >
+                {cart ? "Remove From Cart" : "Add to Cart"}
+              </button>
             </div>
           </div>
         </div>
