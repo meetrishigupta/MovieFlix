@@ -97,6 +97,7 @@ h1 {
   height: 15px;
 }
 .footer .str-btn {
+  cursor: pointer;
   width: 15px;
   margin-left: 7px;
   height: 15px;
@@ -111,20 +112,28 @@ h1 {
 }
 .favourite-btn {
   background-color: #bc16dd;
+  cursor: pointer;
+
   color: #fff;
   margin: 5px;
 }
 .cart-btn {
+  cursor: pointer;
+
   background-color: #251bb1;
   color: #fff;
   margin: 5px;
 }
 .remcart-btn {
+  cursor: pointer;
+
   background-color: #db2828;
   color: #fff;
   margin: 5px;
 }
 .unfavourite-btn {
+  cursor: pointer;
+
   background-color: #db2828;
   color: #fff;
   text-shadow: none;
