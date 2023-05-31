@@ -1,43 +1,13 @@
 import React from "react";
-
-const handleStarsinc = () => {
-  // //First Form of setState()
-  // this.setState({
-  //   stars: this.state.stars + 0.5,
-  // });
-  if (this.state.stars < 5) {
-    this.setState((prev) => {
-      return {
-        stars: prev.stars + 0.5,
-      };
-    });
-  }
-};
-
-const handleStarsdec = () => {
-  if (this.state.stars > 0) {
-    this.setState({
-      stars: this.state.stars - 0.5,
-    });
-  }
-};
-const handlefav = () => {
-  this.setState({
-    fav: !this.state.fav,
-  });
-};
-const handleCart = () => {
-  this.setState({
-    cart: !this.state.cart,
-  });
-};
 const MovieCard = (props) => {
-  const {movies: data} = props; //changing name of props from passing from parent
-  const { cart, fav, title, plot, stars, price, rating, img } = data; //destructuring data
+  const { movies, handleStarsinc, handleStarsdec, handlefav, handlecart } = props;
+  const { cart, fav, title, plot, stars, price, rating, img, bgColor } = props.movies; //destructuring data
   return (
-    <div className="main">
+    <div className="main"  >
       {/**Movie Card */}
-      <div className="movie-card">
+      <div className="movie-card" style={{
+        backgroundColor: bgColor,
+      }}>
         {/**Left section of Movie Card */}
         <div className="left">
           <img alt="poster" src={img} />
@@ -60,7 +30,7 @@ const MovieCard = (props) => {
               <img
                 id="dec-button"
                 className="str-btn"
-                onClick={handleStarsdec}
+                onClick={() => { handleStarsdec(movies) }}
                 alt="Decrease"
                 src="https://cdn-icons-png.flaticon.com/128/2801/2801932.png"
               />
@@ -72,7 +42,7 @@ const MovieCard = (props) => {
               <img
                 className="str-btn"
                 alt="increase"
-                onClick={handleStarsinc}
+                onClick={() => { handleStarsinc(movies) }}
                 src="https://cdn-icons-png.flaticon.com/128/2997/2997933.png"
               />
               <span className="starCount">{stars}</span>
@@ -80,18 +50,19 @@ const MovieCard = (props) => {
 
             {/**Favourite and add to cart buttons */}
             {fav ? (
-              <button className="unfavourite-btn" onClick={handlefav}>
+              <button onClick={() =>{handlefav(movies)}} className="unfavourite-btn" >
                 Un Favourite
               </button>
             ) : (
-              <button className="favourite-btn" onClick={handlefav}>
+              <button onClick={() =>{handlefav(movies)}}  className="favourite-btn">
                 Favourite
               </button>
             )}
 
             <button
-              onClick={handleCart}
+         
               className={cart ? "remcart-btn" : "cart-btn"}
+              onClick={() =>{handlecart(movies)}}
             >
               {cart ? "Remove From Cart" : "Add to Cart"}
             </button>

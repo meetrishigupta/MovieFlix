@@ -4,8 +4,7 @@ export default function App() {
 
   return (
     <>
-      <h1>Movie App</h1>
-<img src="/workspaces/MovieFlix/src/mcu.png" alt="mcu" />
+<img className="logo" src="https://static.wikia.nocookie.net/logopedia/images/6/68/Marvel_Studios_2008.svg" alt="mcu" />
       <MovieList />
     </>
   );
