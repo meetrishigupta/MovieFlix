@@ -9,9 +9,7 @@ body {
 background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlTExPD2DsUUbg47mF3OgahnfQ0tyZZXNITg&usqp=CAU);  
 }
 h1 {
-  background: -webkit-linear-gradient(#f00, #0322ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+ color: white;
   font-family: 'Oswald', sans-serif;
   font-size: 55px;
   text-align: center;

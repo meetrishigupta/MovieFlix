@@ -4,6 +4,8 @@ const MovieCard = (props) => {
   const { cart, fav, title, plot, stars, price, rating, img, bgColor } = props.movies; //destructuring data
   return (
     <div className="main"  >
+
+      
       {/**Movie Card */}
       <div className="movie-card" style={{
         backgroundColor: bgColor,
