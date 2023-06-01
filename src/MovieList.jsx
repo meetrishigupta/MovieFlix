@@ -1,14 +1,5 @@
 import { Component } from "react";
 import MovieCard from "./MovieCard";
-
-
-
-
-
-
-
-
-
 export class MovieList extends Component {
     constructor() {
         super();
@@ -85,31 +76,29 @@ export class MovieList extends Component {
             movies: movies
         })
     }
-    handlecart = (movie) =>{
-        const {movies} = this.state;
-        const mid  = movies.indexOf(movie)
+    handlecart = (movie) => {
+        const { movies } = this.state;
+        const mid = movies.indexOf(movie)
         movies[mid].cart = !movies[mid].cart
         this.setState({
             movies: movies
         })
     }
+    render() {
+        const { movies } = this.state //destructing
+        const { handleStarsinc, handleStarsdec, handlefav, handlecart } = this; //desctructuring functions from this 
+        return (
+            <>
+                {movies.map((item) => <MovieCard
+                    movies={item}
+                    handleStarsinc={handleStarsinc}
+                    handleStarsdec={handleStarsdec}
+                    handlefav={handlefav}
+                    handlecart={handlecart}
+                />
+                )}
 
-render() {
-    // const {title, plot, price,rating, count,cart,stars,fav,img} =  this.state;
-    const { movies } = this.state //destructing
-    const { handleStarsinc, handleStarsdec, handlefav, handlecart} = this; //desctructuring functions from this 
-    return (
-        <>
-            {movies.map((item) => <MovieCard
-                movies={item}
-                handleStarsinc={handleStarsinc}
-                handleStarsdec={handleStarsdec}
-                handlefav={handlefav}
-                handlecart = {handlecart}
-            />
-            )}
-
-        </>
-    )
-}
+            </>
+        )
+    }
 }

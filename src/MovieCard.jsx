@@ -50,19 +50,19 @@ const MovieCard = (props) => {
 
             {/**Favourite and add to cart buttons */}
             {fav ? (
-              <button onClick={() =>{handlefav(movies)}} className="unfavourite-btn" >
+              <button onClick={() => { handlefav(movies) }} className="unfavourite-btn" >
                 Un Favourite
               </button>
             ) : (
-              <button onClick={() =>{handlefav(movies)}}  className="favourite-btn">
+              <button onClick={() => { handlefav(movies) }} className="favourite-btn">
                 Favourite
               </button>
             )}
 
             <button
-         
+
               className={cart ? "remcart-btn" : "cart-btn"}
-              onClick={() =>{handlecart(movies)}}
+              onClick={() => { handlecart(movies) }}
             >
               {cart ? "Remove From Cart" : "Add to Cart"}
             </button>
