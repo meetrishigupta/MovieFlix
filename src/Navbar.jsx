@@ -1,67 +1,72 @@
 import React from "react"
+import styled from "styled-components"
 
-const MovieName = "Marvel Flix"
+const MovieName = "Flix"
+let count = 0;
 export const Navbar = () => {
 
     return (
         <>
-            <div style={style.nav}>
-                <div style={style.headingDiv}>
-                    <h1 style={style.h1}>{MovieName}</h1>
-                </div>
-                <div style={style.divCart}>
-                    <img style={style.cartImg} src="https://icon-library.com/images/shopping-cart-icon-white/shopping-cart-icon-white-12.jpg" alt="cart" />
-                    <span style={style.cartCount}>0</span>
-                </div>
-            </div>
+            <Nav>
+                <Headingdiv>
+                <a href="link address">
+                <img 
+                        style={{
+                            width: 100,
+marginTop: 15,
+marginLeft: 20,
+                        }}
+                      
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png" /> </a>
+            
+                </Headingdiv>
+                <Divcart>
+                    <Cartimg
+                        img src="https://icon-library.com/images/shopping-cart-icon-white/shopping-cart-icon-white-12.jpg" alt="cart"
+                    >
+                    </Cartimg>
+                    <Cartcount>
+                        <span>{count}</span>
+                    </Cartcount>
+                </Divcart>
+            </Nav>
         </>
     )
 }
 
-const style = {
-    nav: {
-        width: "100%",
-        height: 70,
-        background: "purple",
-        display: "flex",
-        justifyContent: "space-between"
-    },
-    headingDiv: {
-        width: "50%",
-    },
-    h1: {
-        
-        positon: "relative",
-        left: "20px",
-        bottom: "20px",
-        color: "white",
-        letterSpacing: "0.1rem",
-        marginLeft: 20,
-        marginTop: 14
-    },
-    divCart: {
-        width: "50%",
-        position: 'relative',
-        left: "500px",
-        backgroundColor: "#00000069"
+// CSS Components
 
+const Nav = styled.div`
+width: 100%;
+height: 70px;
+background-color: #00000094;
+display: flex;
+justify-content: space-between;
+`;
 
-    },
-    cartImg: {
-        marginTop: "20px",
-        width: "5%",
-        marginLeft: "40px",
-    },
-    cartCount: {
-        fontSize: 13,
-        color: "black",
-        borderRadius: "50px",
-        width: "10px",
-        backgroundColor: "orange",
-        fontWeight: 600,
-        padding: "1px 6px",
-        position: "relative",
-        top: "-17px",
-        right: "9px"
-    }
-}
+const Headingdiv = styled.div`
+width: 50%;
+`;
+const Divcart = styled.div`
+width: 10%;
+left: 500px;
+background-color: #00000069;
+`;
+
+const Cartimg = styled.img`
+margin-top: 20px;
+width: 40px;
+margin-left: 40px;
+`;
+const Cartcount = styled.span`
+font-size: 15px;
+color: black;
+border-radius: 50px;
+width: 10px;
+background-color: orange;
+font-weight: 600;
+padding: 1px 6px;
+position: relative;
+top: -22px;
+right: 12px;
+`;
