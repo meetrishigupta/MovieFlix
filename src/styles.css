@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -6,14 +7,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlTExPD2DsUUbg47mF3OgahnfQ0tyZZXNITg&usqp=CAU);  
+background-color: rgb(212, 212, 212);  
 }
-h1 {
- color: white;
-  font-family: 'Oswald', sans-serif;
-  font-size: 55px;
-  text-align: center;
-}
+
 .main {
   width: 70%;
   margin: 0 auto;
