@@ -3,8 +3,8 @@ import styled from "styled-components"
 
 const MovieName = "Flix"
 let count = 0;
-export const Navbar = () => {
-
+export const Navbar = (props) => {
+    const { cartCount } = props;
     return (
         <>
             <Nav>
@@ -26,7 +26,7 @@ export const Navbar = () => {
                     >
                     </Cartimg>
                     <Cartcount show={true}>
-                        <span>0</span>
+                        <span>{cartCount}</span>
                     </Cartcount>
                 </Divcart>
             </Nav>
