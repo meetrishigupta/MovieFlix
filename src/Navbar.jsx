@@ -9,24 +9,24 @@ export const Navbar = () => {
         <>
             <Nav>
                 <Headingdiv>
-                <a href="link address">
-                <img 
-                        style={{
-                            width: 100,
-marginTop: 15,
-marginLeft: 20,
-                        }}
-                      
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png" /> </a>
-            
+                    <a href="link address">
+                        <img
+                            style={{
+                                width: 100,
+                                marginTop: 15,
+                                marginLeft: 20,
+                            }}
+
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png" /> </a>
+
                 </Headingdiv>
                 <Divcart>
                     <Cartimg
                         img src="https://icon-library.com/images/shopping-cart-icon-white/shopping-cart-icon-white-12.jpg" alt="cart"
                     >
                     </Cartimg>
-                    <Cartcount>
-                        <span>{count}</span>
+                    <Cartcount show={true}>
+                        <span>0</span>
                     </Cartcount>
                 </Divcart>
             </Nav>
@@ -46,7 +46,15 @@ justify-content: space-between;
 
 const Headingdiv = styled.div`
 width: 50%;
-`;
+&:hover{
+    img{
+        transition: all .4s ease-in-out;
+        transform: scale(1.1);
+    }
+}
+
+`
+
 const Divcart = styled.div`
 width: 10%;
 left: 500px;
@@ -55,7 +63,7 @@ background-color: #00000069;
 
 const Cartimg = styled.img`
 margin-top: 20px;
-width: 40px;
+width: 40px;        
 margin-left: 40px;
 `;
 const Cartcount = styled.span`
@@ -69,4 +77,5 @@ padding: 1px 6px;
 position: relative;
 top: -22px;
 right: 12px;
+visibility: ${(props) => props.show ? "visible" : "hidden"};
 `;
