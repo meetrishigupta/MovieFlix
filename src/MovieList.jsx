@@ -2,9 +2,9 @@ import { Component } from "react";
 import MovieCard from "./MovieCard";
 import { movies } from "./moviedata";
 
-export class MovieList extends Component {
-    render() {
-        const { movies, handleStarsinc, handleStarsdec, handlefav, handlecart } = this.props //destructing
+export const MovieList = (props) => {
+
+        const { movies, handleStarsinc, handleStarsdec, handlefav, handlecart } = props //destructing
         return (
             <>
                 {movies.map((item) => <MovieCard
@@ -19,5 +19,5 @@ export class MovieList extends Component {
 
             </>
         )
-    }
+    
 }
