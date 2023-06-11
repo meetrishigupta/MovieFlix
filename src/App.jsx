@@ -8,7 +8,8 @@ class App extends React.Component {
     super();
     this.state = {
       movies: movies,
-      cartCount: 0
+      cartCount: 0,
+      loading: true,
     }
   }
   handleStarsinc = (movie) => {
@@ -59,7 +60,18 @@ class App extends React.Component {
     })
   }
 
+  
+
   render() {
+    if(this.state.loading){
+      setTimeout(() => {
+        this.setState({
+          loading: false
+        })
+      }, 2000);
+      return<img className="loading" src={require("/workspaces/MovieFlix/src/loading.gif")} />
+    }
+    
     const { movies } = this.state;
     const { cartCount } = this.state;
     return (
