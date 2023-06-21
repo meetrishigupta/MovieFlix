@@ -69,7 +69,7 @@ class App extends React.Component {
           loading: false
         })
       }, 1500);
-      return<img className="loading" src={require("/workspaces/MovieFlix/src/loading.gif")} />
+      return<img className="loading" src={require("/workspaces/MovieFlix/src/loadingss.gif")} />
     }
     
     const { movies } = this.state;
